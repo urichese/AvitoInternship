@@ -9,17 +9,12 @@ import Foundation
 
 // MARK: - EmployeesViewProtocol
 extension EmployeesViewController: EmployeesViewProtocol {
-    func didGetEmployeesData(company: Company) {
-        print(company)
-        self.company = company
+
+    func getEmployees() {
+        self.company = presenter?.getEmployeesData()
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
-        
-    }
-    
-    func getEmployees() {
-        presenter?.getEmployeesData()
     }
     
 }

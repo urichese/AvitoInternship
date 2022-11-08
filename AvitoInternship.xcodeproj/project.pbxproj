@@ -146,7 +146,6 @@
 		CB7BE59B29181E1F00B32AE5 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				CB7BE57F2917CCA600B32AE5 /* Services */,
 				CB7BE5902917F92B00B32AE5 /* EmployeesInteractor.swift */,
 			);
 			path = Interactor;
@@ -211,6 +210,7 @@
 			children = (
 				CB97D5B629153950001DAC82 /* Info.plist */,
 				CB7BE58B2917F90A00B32AE5 /* Employees */,
+				CB7BE57F2917CCA600B32AE5 /* Services */,
 				CB97D5DB29156DB5001DAC82 /* Application */,
 				CB7BE58A2917F07800B32AE5 /* Resources */,
 			);

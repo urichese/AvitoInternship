@@ -6,8 +6,7 @@
 //
 
 protocol EmployeesPresenterProtocol: AnyObject {
-    func getEmployeesData()
-    func didGetEmployeesData(company: Company)
+    func getEmployeesData() -> Company?
 }
 
 class EmployeesPresenter {
@@ -22,12 +21,9 @@ class EmployeesPresenter {
 }
 
 extension EmployeesPresenter: EmployeesPresenterProtocol {
-    func didGetEmployeesData(company: Company) {
-        view?.didGetEmployeesData(company: company)
-    }
     
-    func getEmployeesData() {
-        interactor.getEmployeesData()
+    func getEmployeesData() -> Company? {
+        return interactor.getEmployeesData()
     }
     
 }

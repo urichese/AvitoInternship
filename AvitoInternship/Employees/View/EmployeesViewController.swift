@@ -9,7 +9,6 @@ import UIKit
 
 protocol EmployeesViewProtocol: AnyObject {
     func getEmployees()
-    func didGetEmployeesData(company: Company)
 }
 
 class EmployeesViewController: UIViewController {
