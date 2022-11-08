@@ -6,19 +6,17 @@
 //
 
 protocol EmployeesInteractorProtocol: AnyObject {
-    func getEmployeesData() -> Company?
+    func getEmployeesData()
 }
 
 class EmployeesInteractor: EmployeesInteractorProtocol {
     
     private var fetcher: DataFetcher = NetworkDataFetcher(networking: NetworkService())
     
-    func getEmployeesData() -> Company? {
-        var company: Company?
-        fetcher.getEmployees { responce in
-            company = responce
+    func getEmployeesData() {
+        fetcher.getEmployees { [weak self] result in
+            self?.presenter?.presentFetchedData(responce: result)
         }
-        return company
     }
     
     weak var presenter: EmployeesPresenterProtocol?

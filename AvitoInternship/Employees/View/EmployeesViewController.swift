@@ -9,6 +9,8 @@ import UIKit
 
 protocol EmployeesViewProtocol: AnyObject {
     func getEmployees()
+    func presentCompanyData(company: Company)
+    func presentError(error: Error)
 }
 
 class EmployeesViewController: UIViewController {

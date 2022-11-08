@@ -6,7 +6,9 @@
 //
 
 protocol EmployeesPresenterProtocol: AnyObject {
-    func getEmployeesData() -> Company?
+    func fetchEmployeesData()
+    func presentFetchedData(responce: Result<Company, Error>)
+
 }
 
 class EmployeesPresenter {
@@ -21,9 +23,19 @@ class EmployeesPresenter {
 }
 
 extension EmployeesPresenter: EmployeesPresenterProtocol {
+    func presentFetchedData(responce: Result<Company, Error>) {
+        switch responce {
+            case .success(let company):
+                self.view?.presentCompanyData(company: company)
+            case .failure(let error):
+                self.view?.presentError(error: error)
+        }
+    }
     
-    func getEmployeesData() -> Company? {
-        return interactor.getEmployeesData()
+    
+    
+    func fetchEmployeesData() {
+        interactor.getEmployeesData()
     }
     
 }

@@ -23,18 +23,14 @@ extension EmployeesViewController {
         tableView.backgroundColor = .clear
         tableView.dataSource = self
         tableView.delegate = self
-
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.allowsSelection = false
-        
-
     }
     private func addSubViews() {
         view.addSubview(tableView)
     }
     private func setUpConstraints() {
         NSLayoutConstraint.activate([
-
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             tableView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9),

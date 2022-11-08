@@ -8,12 +8,12 @@
 import Foundation
 
 protocol Networking {
-    func request(url: String, completion: @escaping (Data?, Error?)->Void)
+    func request(url: String, completion: @escaping (Data?, URLResponse?, Error?)->Void)
 }
 
 final class NetworkService:Networking {
     
-    func request(url: String, completion: @escaping (Data?, Error?) -> Void) {
+    func request(url: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
         
         guard let url = URL(string: url) else { return }
         let request = URLRequest(url: url)
@@ -21,9 +21,9 @@ final class NetworkService:Networking {
         task.resume()
     }
     
-    private func createDataTask(from request: URLRequest, completion: @escaping (Data?, Error?) -> Void) -> URLSessionDataTask {
+    private func createDataTask(from request: URLRequest, completion: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
         return URLSession.shared.dataTask(with: request, completionHandler: {(data, response, error) in
-            completion(data, error)
+            completion(data, response, error)
         })
     }
 }

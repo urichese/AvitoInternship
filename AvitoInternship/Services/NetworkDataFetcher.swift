@@ -8,22 +8,46 @@
 import Foundation
 
 protocol DataFetcher {
-    func getEmployees(response:@escaping (Company?) -> Void)
+    func getEmployees(completion:@escaping (Result<Company, Error>) -> Void)
 }
 
 struct NetworkDataFetcher:DataFetcher {
     
     let networking: Networking
     
-    func getEmployees(response: @escaping (Company?) -> Void) {
-        networking.request(url: API.url) { data, error in
+    func getEmployees(completion: @escaping (Result<Company, Error>) -> Void) {
+        networking.request(url: API.url) { data, response, error in
+            
             if let error = error {
-                print("Error request \(error.localizedDescription)")
-                response(nil)
+                let nsError = error as NSError
+                if nsError.domain == NSURLErrorDomain, nsError.code == -1009 {
+                    completion(.failure(NetworkError.noInternetConnection))
+                    return
+                }
+
+                if nsError.domain == NSURLErrorDomain, nsError.code == -1001 {
+                    completion(.failure(NetworkError.timeout))
+                }
+
+                completion(.failure(NetworkError.networkError))
+                return
             }
-            guard let data = data else { return }
+
+            guard response != nil else {
+                completion(.failure(NetworkError.responseError))
+                return
+            }
+
+            guard let data = data else {
+                completion(.failure(NetworkError.networkError))
+                return
+            }
             let decoded = self.decodeJSON(type: EmployeesResponse.self, from: data )
-            response(decoded?.company)
+            
+            if let company = decoded?.company {
+                completion(.success(company))
+            }
+            
         }
     }
     
@@ -34,4 +58,12 @@ struct NetworkDataFetcher:DataFetcher {
         return response
         
     }
+}
+
+// MARK: - NetworkError
+enum NetworkError: Error {
+    case networkError
+    case timeout
+    case responseError
+    case noInternetConnection
 }
