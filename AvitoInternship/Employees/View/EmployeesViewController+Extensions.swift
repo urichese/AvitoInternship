@@ -9,9 +9,11 @@ import Foundation
 import UIKit
 
 extension EmployeesViewController: UITableViewDelegate, UITableViewDataSource {
+    
     // MARK: - UITableViewDataSource
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return company?.employees.count ?? 0
+        return presenter?.getCountOfEmloyees() ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -20,7 +22,7 @@ extension EmployeesViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = cell as? EmployeeCell else {
             return cell
         }
-        if let employee = company?.employees[indexPath.row] {
+        if let employee = presenter?.getEmloyee(row: indexPath.row) {
             cell.name = employee.name
             cell.phoneNumber = employee.phoneNumber
             cell.skills = employee.skills
@@ -29,14 +31,15 @@ extension EmployeesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        return 50
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return company?.name ?? ""
+        return presenter?.getEmloyeesCompanyName() ?? ""
     }
+    
     // MARK: - UITableViewDelegate
 //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 //        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: HeaderView.reuseId)
@@ -47,3 +50,5 @@ extension EmployeesViewController: UITableViewDelegate, UITableViewDataSource {
 //        return header
 //    }
 }
+
+

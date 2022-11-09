@@ -8,7 +8,7 @@
 import UIKit
 
 protocol EmployeesViewProtocol: AnyObject {
-    func presentCompanyData(company: Company)
+    func presentCompanyData()
     func presentError(errorString: String)
 }
 
@@ -22,8 +22,6 @@ class EmployeesViewController: UIViewController {
     var refreshControl = UIRefreshControl()
     
     // MARK: - Properties
-    var company: Company?
-    var isReloadTable: Bool = false
 
     // MARK: - View lifecycle
     override func viewDidLoad() {

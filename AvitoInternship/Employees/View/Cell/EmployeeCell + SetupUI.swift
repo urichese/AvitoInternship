@@ -10,35 +10,45 @@ import UIKit
 
 extension EmployeeCell {
     func prepareViews() {
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        containerView.translatesAutoresizingMaskIntoConstraints = false
         
-        skillsLabel.textColor = .gray
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel.font = .systemFont(ofSize: 16, weight: .medium)
+        
+        skillsLabel.font = .systemFont(ofSize: 12, weight: .regular)
         skillsLabel.numberOfLines = 0
         skillsLabel.translatesAutoresizingMaskIntoConstraints = false
         
         phoneNumberLabel.textAlignment = .right
+        phoneNumberLabel.textColor = .gray
+        phoneNumberLabel.font = .systemFont(ofSize: 12, weight: .medium)
         phoneNumberLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        containerView.backgroundColor = UIColor.clear
-        containerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        stackView.axis  = NSLayoutConstraint.Axis.horizontal
+//        stackView.distribution  = UIStackView.Distribution.equalSpacing
+//        stackView.alignment = UIStackView.Alignment.center
+//        stackView.spacing   = 16.0
+        stackView.backgroundColor = .yellow
     }
     
     func setUpSubviews() {
         contentView.addSubview(containerView)
 
         containerView.addSubview(nameLabel)
-        containerView.addSubview(skillsLabel)
+        containerView.addSubview(stackView)
         containerView.addSubview(phoneNumberLabel)
+        
+        stackView.addSubview(skillsLabel)
     }
     
     func setUpConstraints() {
         
         // MARK: - containerView constraints
         NSLayoutConstraint.activate([
-            containerView.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 10),
+            containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
             containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 20),
-            containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
         
         // MARK: - nameLabel constraints
@@ -50,13 +60,14 @@ extension EmployeeCell {
 
         // MARK: - skillsLabel constraints
         NSLayoutConstraint.activate([
-            skillsLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5),
-            skillsLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor)
+            stackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+//            stackView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+//            stackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
         ])
 
         // MARK: - phoneLabel constraints
         NSLayoutConstraint.activate([
-            phoneNumberLabel.topAnchor.constraint(equalTo: containerView.topAnchor),
+            phoneNumberLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 5),
             phoneNumberLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
         ])
     }

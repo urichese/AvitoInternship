@@ -19,8 +19,7 @@ extension EmployeesViewController: EmployeesViewProtocol {
         }
     }
     
-    func presentCompanyData(company: Company) {
-        self.company = company
+    func presentCompanyData() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }

@@ -14,6 +14,7 @@ class EmployeeCell: UITableViewCell {
     lazy var nameLabel = UILabel()
     lazy var skillsLabel = UILabel()
     lazy var phoneNumberLabel = UILabel()
+    lazy var stackView   = UIStackView()
     
     lazy var containerView = UIView()
 
