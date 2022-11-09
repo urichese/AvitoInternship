@@ -20,6 +20,4 @@ struct Employee: Decodable {
     let name: String
     let phoneNumber: String
     let skills: [String]
-    
-    
 }

@@ -8,9 +8,8 @@
 import UIKit
 
 protocol EmployeesViewProtocol: AnyObject {
-    func getEmployees()
     func presentCompanyData(company: Company)
-    func presentError(error: Error)
+    func presentError(errorString: String)
 }
 
 class EmployeesViewController: UIViewController {
@@ -20,16 +19,18 @@ class EmployeesViewController: UIViewController {
     
     // MARK: - Subviews
     var tableView = UITableView()
+    var refreshControl = UIRefreshControl()
     
     // MARK: - Properties
     var company: Company?
+    var isReloadTable: Bool = false
 
     // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         initialize()
         setupUI()
-        getEmployees()
+        presenter?.fetchEmployees()
     }
 }
 

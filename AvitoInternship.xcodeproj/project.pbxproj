@@ -17,9 +17,9 @@
 		CB7BE5932917F92B00B32AE5 /* EmployeesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7BE58E2917F92B00B32AE5 /* EmployeesRouter.swift */; };
 		CB7BE5942917F92B00B32AE5 /* EmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7BE58F2917F92B00B32AE5 /* EmployeesViewController.swift */; };
 		CB7BE5952917F92B00B32AE5 /* EmployeesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7BE5902917F92B00B32AE5 /* EmployeesInteractor.swift */; };
-		CB7BE5982917F97300B32AE5 /* EmployeesViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7BE5972917F97300B32AE5 /* EmployeesViewController + Extensions.swift */; };
-		CB7BE59A2917F9B700B32AE5 /* EmployeesViewController + SetupUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7BE5992917F9B700B32AE5 /* EmployeesViewController + SetupUI.swift */; };
-		CB7BE5A0291820B200B32AE5 /* EmployeesViewController + Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7BE59F291820B200B32AE5 /* EmployeesViewController + Actions.swift */; };
+		CB7BE5982917F97300B32AE5 /* EmployeesViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7BE5972917F97300B32AE5 /* EmployeesViewController+Extensions.swift */; };
+		CB7BE59A2917F9B700B32AE5 /* EmployeesViewController+SetupUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7BE5992917F9B700B32AE5 /* EmployeesViewController+SetupUI.swift */; };
+		CB7BE5A0291820B200B32AE5 /* EmployeesViewController+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7BE59F291820B200B32AE5 /* EmployeesViewController+Actions.swift */; };
 		CB97D5A92915394C001DAC82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB97D5A82915394C001DAC82 /* AppDelegate.swift */; };
 		CB97D5AB2915394C001DAC82 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB97D5AA2915394C001DAC82 /* SceneDelegate.swift */; };
 		CB97D5B229153950001DAC82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB97D5B129153950001DAC82 /* Assets.xcassets */; };
@@ -28,6 +28,7 @@
 		CB97D5CA29153950001DAC82 /* AvitoInternshipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB97D5C929153950001DAC82 /* AvitoInternshipUITests.swift */; };
 		CB97D5CC29153950001DAC82 /* AvitoInternshipUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB97D5CB29153950001DAC82 /* AvitoInternshipUITestsLaunchTests.swift */; };
 		CB97D5D92915498D001DAC82 /* EmployeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB97D5D82915498D001DAC82 /* EmployeeCell.swift */; };
+		CBA2BC77291B8A8900864F31 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA2BC76291B8A8900864F31 /* Cache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,9 +59,9 @@
 		CB7BE58E2917F92B00B32AE5 /* EmployeesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesRouter.swift; sourceTree = "<group>"; };
 		CB7BE58F2917F92B00B32AE5 /* EmployeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesViewController.swift; sourceTree = "<group>"; };
 		CB7BE5902917F92B00B32AE5 /* EmployeesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesInteractor.swift; sourceTree = "<group>"; };
-		CB7BE5972917F97300B32AE5 /* EmployeesViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmployeesViewController + Extensions.swift"; sourceTree = "<group>"; };
-		CB7BE5992917F9B700B32AE5 /* EmployeesViewController + SetupUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmployeesViewController + SetupUI.swift"; sourceTree = "<group>"; };
-		CB7BE59F291820B200B32AE5 /* EmployeesViewController + Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmployeesViewController + Actions.swift"; sourceTree = "<group>"; };
+		CB7BE5972917F97300B32AE5 /* EmployeesViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmployeesViewController+Extensions.swift"; sourceTree = "<group>"; };
+		CB7BE5992917F9B700B32AE5 /* EmployeesViewController+SetupUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmployeesViewController+SetupUI.swift"; sourceTree = "<group>"; };
+		CB7BE59F291820B200B32AE5 /* EmployeesViewController+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmployeesViewController+Actions.swift"; sourceTree = "<group>"; };
 		CB97D5A52915394C001DAC82 /* AvitoInternship.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvitoInternship.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB97D5A82915394C001DAC82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB97D5AA2915394C001DAC82 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +74,7 @@
 		CB97D5C929153950001DAC82 /* AvitoInternshipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvitoInternshipUITests.swift; sourceTree = "<group>"; };
 		CB97D5CB29153950001DAC82 /* AvitoInternshipUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvitoInternshipUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CB97D5D82915498D001DAC82 /* EmployeeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCell.swift; sourceTree = "<group>"; };
+		CBA2BC76291B8A8900864F31 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				CB7BE5842917CD3300B32AE5 /* API.swift */,
 				CB7BE5862917CD4900B32AE5 /* NetworkDataFetcher.swift */,
 				CB7BE5882917CD5900B32AE5 /* NetworkService.swift */,
+				CBA2BC76291B8A8900864F31 /* Cache.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -136,9 +139,9 @@
 			children = (
 				CB7BE5A2291828AD00B32AE5 /* Cell */,
 				CB7BE58F2917F92B00B32AE5 /* EmployeesViewController.swift */,
-				CB7BE59F291820B200B32AE5 /* EmployeesViewController + Actions.swift */,
-				CB7BE5972917F97300B32AE5 /* EmployeesViewController + Extensions.swift */,
-				CB7BE5992917F9B700B32AE5 /* EmployeesViewController + SetupUI.swift */,
+				CB7BE59F291820B200B32AE5 /* EmployeesViewController+Actions.swift */,
+				CB7BE5972917F97300B32AE5 /* EmployeesViewController+Extensions.swift */,
+				CB7BE5992917F9B700B32AE5 /* EmployeesViewController+SetupUI.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -376,12 +379,13 @@
 				CB7BE5872917CD4900B32AE5 /* NetworkDataFetcher.swift in Sources */,
 				CB2036A329190860008840EC /* EmployeeCell + SetupUI.swift in Sources */,
 				CB97D5D92915498D001DAC82 /* EmployeeCell.swift in Sources */,
-				CB7BE59A2917F9B700B32AE5 /* EmployeesViewController + SetupUI.swift in Sources */,
+				CB7BE59A2917F9B700B32AE5 /* EmployeesViewController+SetupUI.swift in Sources */,
+				CBA2BC77291B8A8900864F31 /* Cache.swift in Sources */,
 				CB97D5A92915394C001DAC82 /* AppDelegate.swift in Sources */,
 				CB97D5AB2915394C001DAC82 /* SceneDelegate.swift in Sources */,
 				CB7BE5932917F92B00B32AE5 /* EmployeesRouter.swift in Sources */,
-				CB7BE5A0291820B200B32AE5 /* EmployeesViewController + Actions.swift in Sources */,
-				CB7BE5982917F97300B32AE5 /* EmployeesViewController + Extensions.swift in Sources */,
+				CB7BE5A0291820B200B32AE5 /* EmployeesViewController+Actions.swift in Sources */,
+				CB7BE5982917F97300B32AE5 /* EmployeesViewController+Extensions.swift in Sources */,
 				CB7BE5912917F92B00B32AE5 /* EmployeesModuleBuilder.swift in Sources */,
 				CB7BE5942917F92B00B32AE5 /* EmployeesViewController.swift in Sources */,
 				CB7BE5852917CD3300B32AE5 /* API.swift in Sources */,

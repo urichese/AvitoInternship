@@ -15,7 +15,7 @@ class EmployeesInteractor: EmployeesInteractorProtocol {
     
     func getEmployeesData() {
         fetcher.getEmployees { [weak self] result in
-            self?.presenter?.presentFetchedData(responce: result)
+            self?.presenter?.presentEmployeesFetchedData(responce: result)
         }
     }
     

@@ -25,6 +25,9 @@ extension EmployeesViewController {
         tableView.delegate = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.allowsSelection = false
+        tableView.refreshControl = refreshControl
+        
+        refreshControl.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
     }
     private func addSubViews() {
         view.addSubview(tableView)

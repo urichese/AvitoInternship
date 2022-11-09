@@ -8,14 +8,20 @@
 import Foundation
 
 protocol DataFetcher {
-    func getEmployees(completion:@escaping (Result<Company, Error>) -> Void)
+    func getEmployees(completion:@escaping (Result<Company, NetworkError>) -> Void)
 }
 
 struct NetworkDataFetcher:DataFetcher {
     
+    private let cache = Cache<String, Company>()
+    
     let networking: Networking
     
-    func getEmployees(completion: @escaping (Result<Company, Error>) -> Void) {
+    func getEmployees(completion: @escaping (Result<Company, NetworkError>) -> Void) {
+
+        if let company = cache[API.url] {
+            return completion(.success(company))
+        }
         networking.request(url: API.url) { data, response, error in
             
             if let error = error {
@@ -46,6 +52,7 @@ struct NetworkDataFetcher:DataFetcher {
             
             if let company = decoded?.company {
                 completion(.success(company))
+                cache[API.url] = company
             }
             
         }

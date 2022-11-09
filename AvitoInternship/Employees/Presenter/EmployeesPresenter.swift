@@ -6,8 +6,8 @@
 //
 
 protocol EmployeesPresenterProtocol: AnyObject {
-    func fetchEmployeesData()
-    func presentFetchedData(responce: Result<Company, Error>)
+    func fetchEmployees()
+    func presentEmployeesFetchedData(responce: Result<Company, NetworkError>)
 
 }
 
@@ -23,19 +23,29 @@ class EmployeesPresenter {
 }
 
 extension EmployeesPresenter: EmployeesPresenterProtocol {
-    func presentFetchedData(responce: Result<Company, Error>) {
+    func presentEmployeesFetchedData(responce: Result<Company, NetworkError>) {
         switch responce {
             case .success(let company):
                 self.view?.presentCompanyData(company: company)
             case .failure(let error):
-                self.view?.presentError(error: error)
+                self.view?.presentError(errorString: messageToDisplayFrom(error))
         }
     }
     
     
     
-    func fetchEmployeesData() {
+    func fetchEmployees() {
         interactor.getEmployeesData()
     }
-    
+    private func messageToDisplayFrom(_ error: NetworkError) -> String {
+        var message = ""
+        switch error {
+        case .noInternetConnection, .timeout:
+            message = "Check your internet connection"
+        default:
+            break
+        }
+
+        return message
+    }
 }

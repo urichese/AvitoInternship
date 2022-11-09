@@ -11,12 +11,9 @@ import UIKit
 // MARK: - EmployeesViewProtocol
 extension EmployeesViewController: EmployeesViewProtocol {
 
-    func getEmployees() {
-        presenter?.fetchEmployeesData()
-    }
-    func presentError(error: Error) {
+    func presentError(errorString: String) {
         DispatchQueue.main.async {
-            let alert = UIAlertController(title: "Error", message: "", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Error", message: errorString, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             self.present(alert, animated: true)
         }
@@ -26,6 +23,13 @@ extension EmployeesViewController: EmployeesViewProtocol {
         self.company = company
         DispatchQueue.main.async {
             self.tableView.reloadData()
+        }
+    }
+    
+    @objc func refreshTable(sender: UIRefreshControl) {
+        DispatchQueue.main.async {
+            self.presenter?.fetchEmployees()
+            self.refreshControl.endRefreshing()
         }
     }
 }
