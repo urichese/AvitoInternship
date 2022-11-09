@@ -42,7 +42,6 @@ extension EmployeeCell {
     
     func setUpSubviews() {
 
-        // MARK: - add Subviews
         contentView.addSubview(nameLabel)
         contentView.addSubview(skillsStackView)
         contentView.addSubview(phoneNumberLabel)

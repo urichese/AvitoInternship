@@ -31,7 +31,8 @@ class EmployeesPresenter {
         self.router = router
     }
     
-    // MARK: - Methods
+    // MARK: - Private methods
+    
     private func messageToDisplayFrom(_ error: NetworkError) -> String {
         var message = ""
         switch error {
@@ -45,11 +46,12 @@ class EmployeesPresenter {
 }
 
 extension EmployeesPresenter: EmployeesPresenterProtocol {
+    
+    // MARK: - EmployeesPresenterProtocol methods
+    
     func getEmloyeesCompanyName() -> String? {
         return company?.name
     }
-    
-    // MARK: - EmployeesPresenterProtocol
     
     func presentEmployeesFetchedData(responce: Result<Company, NetworkError>) {
         switch responce {

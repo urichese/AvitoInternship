@@ -13,9 +13,12 @@ protocol DataFetcher {
 
 struct NetworkDataFetcher:DataFetcher {
     
-    private let cache = Cache<String, Company>()
+    // MARK: - Properties
     
+    private let cache = Cache<String, Company>()
     let networking: Networking
+    
+    // MARK: - Methods
     
     func getEmployees(completion: @escaping (Result<Company, NetworkError>) -> Void) {
 
@@ -58,16 +61,18 @@ struct NetworkDataFetcher:DataFetcher {
         }
     }
     
+    // MARK: - Private methods
+    
     private func decodeJSON<T: Decodable> (type: T.Type, from: Data?) -> T? {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         guard let data = from, let response = try? decoder.decode(type.self, from: data) else {return nil}
         return response
-        
     }
 }
 
 // MARK: - NetworkError
+
 enum NetworkError: Error {
     case networkError
     case timeout

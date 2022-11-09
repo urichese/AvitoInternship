@@ -31,6 +31,7 @@
 		CBA2BC77291B8A8900864F31 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA2BC76291B8A8900864F31 /* Cache.swift */; };
 		CBA2BC79291BE62C00864F31 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA2BC78291BE62C00864F31 /* String+.swift */; };
 		CBA2BC7B291BFA6000864F31 /* EmployeeSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA2BC7A291BFA6000864F31 /* EmployeeSectionHeader.swift */; };
+		CBA2BC7E291C070500864F31 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA2BC7D291C070500864F31 /* UIColor+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		CBA2BC76291B8A8900864F31 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		CBA2BC78291BE62C00864F31 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		CBA2BC7A291BFA6000864F31 /* EmployeeSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeSectionHeader.swift; sourceTree = "<group>"; };
+		CBA2BC7D291C070500864F31 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,9 +221,9 @@
 				CB97D5B629153950001DAC82 /* Info.plist */,
 				CB7BE58B2917F90A00B32AE5 /* Employees */,
 				CB7BE57F2917CCA600B32AE5 /* Services */,
+				CBA2BC7C291C06D900864F31 /* Utils */,
 				CB97D5DB29156DB5001DAC82 /* Application */,
 				CB7BE58A2917F07800B32AE5 /* Resources */,
-				CBA2BC78291BE62C00864F31 /* String+.swift */,
 			);
 			path = AvitoInternship;
 			sourceTree = "<group>";
@@ -250,6 +252,15 @@
 				CB97D5AA2915394C001DAC82 /* SceneDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		CBA2BC7C291C06D900864F31 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CBA2BC78291BE62C00864F31 /* String+.swift */,
+				CBA2BC7D291C070500864F31 /* UIColor+.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,6 +402,7 @@
 				CB97D5AB2915394C001DAC82 /* SceneDelegate.swift in Sources */,
 				CB7BE5932917F92B00B32AE5 /* EmployeesRouter.swift in Sources */,
 				CB7BE5A0291820B200B32AE5 /* EmployeesViewController+Actions.swift in Sources */,
+				CBA2BC7E291C070500864F31 /* UIColor+.swift in Sources */,
 				CB7BE5982917F97300B32AE5 /* EmployeesViewController+Extensions.swift in Sources */,
 				CBA2BC79291BE62C00864F31 /* String+.swift in Sources */,
 				CB7BE5912917F92B00B32AE5 /* EmployeesModuleBuilder.swift in Sources */,
