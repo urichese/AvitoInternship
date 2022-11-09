@@ -12,7 +12,6 @@
 		CB7BE5852917CD3300B32AE5 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7BE5842917CD3300B32AE5 /* API.swift */; };
 		CB7BE5872917CD4900B32AE5 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7BE5862917CD4900B32AE5 /* NetworkDataFetcher.swift */; };
 		CB7BE5892917CD5900B32AE5 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7BE5882917CD5900B32AE5 /* NetworkService.swift */; };
-		CB7BE5912917F92B00B32AE5 /* EmployeesModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7BE58C2917F92B00B32AE5 /* EmployeesModuleBuilder.swift */; };
 		CB7BE5922917F92B00B32AE5 /* EmployeesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7BE58D2917F92B00B32AE5 /* EmployeesPresenter.swift */; };
 		CB7BE5932917F92B00B32AE5 /* EmployeesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7BE58E2917F92B00B32AE5 /* EmployeesRouter.swift */; };
 		CB7BE5942917F92B00B32AE5 /* EmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7BE58F2917F92B00B32AE5 /* EmployeesViewController.swift */; };
@@ -32,6 +31,8 @@
 		CBA2BC79291BE62C00864F31 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA2BC78291BE62C00864F31 /* String+.swift */; };
 		CBA2BC7B291BFA6000864F31 /* EmployeeSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA2BC7A291BFA6000864F31 /* EmployeeSectionHeader.swift */; };
 		CBA2BC7E291C070500864F31 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA2BC7D291C070500864F31 /* UIColor+.swift */; };
+		CBA2BC81291C14BB00864F31 /* EmployeesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA2BC80291C14BB00864F31 /* EmployeesAssembly.swift */; };
+		CBA2BC83291C389100864F31 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA2BC82291C389100864F31 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +58,6 @@
 		CB7BE5842917CD3300B32AE5 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		CB7BE5862917CD4900B32AE5 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		CB7BE5882917CD5900B32AE5 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		CB7BE58C2917F92B00B32AE5 /* EmployeesModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesModuleBuilder.swift; sourceTree = "<group>"; };
 		CB7BE58D2917F92B00B32AE5 /* EmployeesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesPresenter.swift; sourceTree = "<group>"; };
 		CB7BE58E2917F92B00B32AE5 /* EmployeesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesRouter.swift; sourceTree = "<group>"; };
 		CB7BE58F2917F92B00B32AE5 /* EmployeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +81,8 @@
 		CBA2BC78291BE62C00864F31 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		CBA2BC7A291BFA6000864F31 /* EmployeeSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeSectionHeader.swift; sourceTree = "<group>"; };
 		CBA2BC7D291C070500864F31 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		CBA2BC80291C14BB00864F31 /* EmployeesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesAssembly.swift; sourceTree = "<group>"; };
+		CBA2BC82291C389100864F31 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 		CB7BE58B2917F90A00B32AE5 /* Employees */ = {
 			isa = PBXGroup;
 			children = (
+				CBA2BC7F291C14A700864F31 /* Assembly */,
 				CB7BE5962917F94400B32AE5 /* View */,
 				CB7BE59B29181E1F00B32AE5 /* Interactor */,
 				CB7BE59C29181E4400B32AE5 /* Presenter */,
@@ -180,7 +183,6 @@
 		CB7BE59E29181E7B00B32AE5 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				CB7BE58C2917F92B00B32AE5 /* EmployeesModuleBuilder.swift */,
 				CB7BE58E2917F92B00B32AE5 /* EmployeesRouter.swift */,
 			);
 			path = Router;
@@ -191,6 +193,7 @@
 			children = (
 				CB97D5D82915498D001DAC82 /* EmployeeCell.swift */,
 				CB2036A229190860008840EC /* EmployeeCell + SetupUI.swift */,
+				CBA2BC82291C389100864F31 /* Constants.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -261,6 +264,14 @@
 				CBA2BC7D291C070500864F31 /* UIColor+.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		CBA2BC7F291C14A700864F31 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				CBA2BC80291C14BB00864F31 /* EmployeesAssembly.swift */,
+			);
+			path = Assembly;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -403,9 +414,10 @@
 				CB7BE5932917F92B00B32AE5 /* EmployeesRouter.swift in Sources */,
 				CB7BE5A0291820B200B32AE5 /* EmployeesViewController+Actions.swift in Sources */,
 				CBA2BC7E291C070500864F31 /* UIColor+.swift in Sources */,
+				CBA2BC81291C14BB00864F31 /* EmployeesAssembly.swift in Sources */,
+				CBA2BC83291C389100864F31 /* Constants.swift in Sources */,
 				CB7BE5982917F97300B32AE5 /* EmployeesViewController+Extensions.swift in Sources */,
 				CBA2BC79291BE62C00864F31 /* String+.swift in Sources */,
-				CB7BE5912917F92B00B32AE5 /* EmployeesModuleBuilder.swift in Sources */,
 				CB7BE5942917F92B00B32AE5 /* EmployeesViewController.swift in Sources */,
 				CB7BE5852917CD3300B32AE5 /* API.swift in Sources */,
 				CB7BE5892917CD5900B32AE5 /* NetworkService.swift in Sources */,
@@ -589,6 +601,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -615,6 +628,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
