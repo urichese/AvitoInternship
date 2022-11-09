@@ -17,11 +17,18 @@
 
 Пример работы:
 
+<img width="355" alt="image" src="https://user-images.githubusercontent.com/82948283/200938992-fe352b31-c9ad-481d-bc81-9cf4279e98a1.png">
+
+
+
+
 С ошибкой сети
 
 
 
 
 
-https://user-images.githubusercontent.com/82948283/200936530-5843cbf5-d7dd-4e39-be41-92eadc048678.mov
+https://user-images.githubusercontent.com/82948283/200938934-588d4825-f02b-472c-b1fd-f51983ccc7fd.mov
+
+
 
