@@ -9,66 +9,65 @@ import Foundation
 import UIKit
 
 extension EmployeeCell {
+    
     func prepareViews() {
-        containerView.translatesAutoresizingMaskIntoConstraints = false
         
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.font = .systemFont(ofSize: 16, weight: .medium)
-        
-        skillsLabel.font = .systemFont(ofSize: 12, weight: .regular)
-        skillsLabel.numberOfLines = 0
-        skillsLabel.translatesAutoresizingMaskIntoConstraints = false
         
         phoneNumberLabel.textAlignment = .right
         phoneNumberLabel.textColor = .gray
         phoneNumberLabel.font = .systemFont(ofSize: 12, weight: .medium)
         phoneNumberLabel.translatesAutoresizingMaskIntoConstraints = false
         
+        skillsStackView.axis = .horizontal
+        skillsStackView.distribution = .equalSpacing
+        skillsStackView.translatesAutoresizingMaskIntoConstraints = false
+        skillsStackView.spacing   = 5
+        skillsStackView.isLayoutMarginsRelativeArrangement = true
         
-        stackView.axis  = NSLayoutConstraint.Axis.horizontal
-//        stackView.distribution  = UIStackView.Distribution.equalSpacing
-//        stackView.alignment = UIStackView.Alignment.center
-//        stackView.spacing   = 16.0
-        stackView.backgroundColor = .yellow
+        for view in skillsStackView.subviews {
+            var label = view as! UILabel
+            label.translatesAutoresizingMaskIntoConstraints = false
+            label.heightAnchor.constraint(equalToConstant: 20).isActive = true
+            label.textAlignment = NSTextAlignment.center
+            label.textColor = UIColor("775495")
+            label.layer.backgroundColor = UIColor("ddd2e4").cgColor
+            label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+            label.widthAnchor.constraint(equalToConstant: (label.text?.size(label.font!).width)! + 10).isActive = true
+            label.layer.cornerRadius = 10
+            label.layer.masksToBounds = true
+        }
     }
     
     func setUpSubviews() {
-        contentView.addSubview(containerView)
 
-        containerView.addSubview(nameLabel)
-        containerView.addSubview(stackView)
-        containerView.addSubview(phoneNumberLabel)
-        
-        stackView.addSubview(skillsLabel)
+        // MARK: - add Subviews
+        contentView.addSubview(nameLabel)
+        contentView.addSubview(skillsStackView)
+        contentView.addSubview(phoneNumberLabel)
     }
     
     func setUpConstraints() {
-        
-        // MARK: - containerView constraints
-        NSLayoutConstraint.activate([
-            containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
-            containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 20),
-            containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
-        ])
-        
+    
         // MARK: - nameLabel constraints
         NSLayoutConstraint.activate([
-            nameLabel.topAnchor.constraint(equalTo: containerView.topAnchor),
-            nameLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
+            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             nameLabel.trailingAnchor.constraint(equalTo: phoneNumberLabel.leadingAnchor ,constant: -5),
         ])
 
-        // MARK: - skillsLabel constraints
+        // MARK: - skillsStackView constraints
         NSLayoutConstraint.activate([
-            stackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
-//            stackView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-//            stackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+//            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            skillsStackView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5),
+            skillsStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20)
         ])
 
         // MARK: - phoneLabel constraints
         NSLayoutConstraint.activate([
-            phoneNumberLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 5),
-            phoneNumberLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+            phoneNumberLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
+            phoneNumberLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
     }
 }

@@ -12,49 +12,54 @@ class EmployeeCell: UITableViewCell {
     
     // MARK: - UIViews
     lazy var nameLabel = UILabel()
-    lazy var skillsLabel = UILabel()
     lazy var phoneNumberLabel = UILabel()
-    lazy var stackView   = UIStackView()
-    
-    lazy var containerView = UIView()
+    var skillsStackView: UIStackView!
 
-    // MARK: - Properties
-    
-    var name = "" {
-        didSet {
-            nameLabel.text = name
-        }
-    }
-    
-    var phoneNumber = "" {
-        didSet {
-            phoneNumberLabel.text = phoneNumber
-        }
-    }
-    
-    var skills = [String]() {
-        didSet {
-            var temp = ""
-            for i in skills {
-                temp += i + ", "
-            }
-            temp = String(temp.dropLast(2))
-            skillsLabel.text = temp
-        }
-    }
-
+    // MARK: - Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         backgroundColor = .clear
-        prepareViews()
-        setUpSubviews()
-        setUpConstraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Methods
+    
+    override func prepareForReuse() {
+        self.nameLabel.text = ""
+        self.phoneNumberLabel.text = ""
+        self.skillsStackView.removeFromSuperview()
+    }
+    
+    func configureCell(with data: Employee) {
+        
+        var subviews: [UILabel] = []
+        
+        self.nameLabel.text = data.name
+        self.phoneNumberLabel.text = data.phoneNumber
+        
+        for skill in data.skills {
+            subviews.append(makeSkillLabel(with: skill))
+        }
+        
+        self.skillsStackView = makeStackView(with: subviews)
+        prepareViews()
+        setUpSubviews()
+        setUpConstraints()
+    }
+    
+    private func makeSkillLabel(with skill: String) -> UILabel {
+        let label = UILabel()
+        label.text = skill
+        return label
+    }
+    
+    private func makeStackView(with arrangedSubviews: [UILabel]) -> UIStackView {
+        let stackView = UIStackView(arrangedSubviews: arrangedSubviews)
+        return stackView
+    }
 }
 

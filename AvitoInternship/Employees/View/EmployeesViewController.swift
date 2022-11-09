@@ -14,26 +14,17 @@ protocol EmployeesViewProtocol: AnyObject {
 
 class EmployeesViewController: UIViewController {
     
-    // MARK: - Public
+    // MARK: - Properties
     var presenter: EmployeesPresenterProtocol?
     
     // MARK: - Subviews
     var tableView = UITableView()
     var refreshControl = UIRefreshControl()
-    
-    // MARK: - Properties
 
     // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        initialize()
         setupUI()
         presenter?.fetchEmployees()
-    }
-}
-
-// MARK: - Private functions
-private extension EmployeesViewController {
-    func initialize() {
     }
 }

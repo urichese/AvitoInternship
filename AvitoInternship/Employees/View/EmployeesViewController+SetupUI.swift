@@ -26,7 +26,8 @@ extension EmployeesViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.allowsSelection = false
         tableView.refreshControl = refreshControl
-//        tableView.separatorStyle = .none
+        tableView.register(EmployeeSectionHeader.self, forHeaderFooterViewReuseIdentifier: EmployeeSectionHeader.reuseIdentifier)
+
         refreshControl.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
     }
     private func addSubViews() {

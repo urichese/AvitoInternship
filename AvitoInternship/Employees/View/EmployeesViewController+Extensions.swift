@@ -23,21 +23,24 @@ extension EmployeesViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         if let employee = presenter?.getEmloyee(row: indexPath.row) {
-            cell.name = employee.name
-            cell.phoneNumber = employee.phoneNumber
-            cell.skills = employee.skills
+            cell.configureCell(with: employee)
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 60
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return presenter?.getEmloyeesCompanyName() ?? ""
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return presenter?.getEmloyeesCompanyName() ?? ""
+//    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: EmployeeSectionHeader.reuseIdentifier) as? EmployeeSectionHeader else { return UIView() }
+        header.headerLabel.text = presenter?.getEmloyeesCompanyName() ?? ""
+        return header
     }
     
     // MARK: - UITableViewDelegate

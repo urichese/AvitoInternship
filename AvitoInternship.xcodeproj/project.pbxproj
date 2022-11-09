@@ -29,6 +29,8 @@
 		CB97D5CC29153950001DAC82 /* AvitoInternshipUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB97D5CB29153950001DAC82 /* AvitoInternshipUITestsLaunchTests.swift */; };
 		CB97D5D92915498D001DAC82 /* EmployeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB97D5D82915498D001DAC82 /* EmployeeCell.swift */; };
 		CBA2BC77291B8A8900864F31 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA2BC76291B8A8900864F31 /* Cache.swift */; };
+		CBA2BC79291BE62C00864F31 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA2BC78291BE62C00864F31 /* String+.swift */; };
+		CBA2BC7B291BFA6000864F31 /* EmployeeSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA2BC7A291BFA6000864F31 /* EmployeeSectionHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		CB97D5CB29153950001DAC82 /* AvitoInternshipUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvitoInternshipUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CB97D5D82915498D001DAC82 /* EmployeeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCell.swift; sourceTree = "<group>"; };
 		CBA2BC76291B8A8900864F31 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		CBA2BC78291BE62C00864F31 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		CBA2BC7A291BFA6000864F31 /* EmployeeSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeSectionHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,7 @@
 				CB7BE59F291820B200B32AE5 /* EmployeesViewController+Actions.swift */,
 				CB7BE5972917F97300B32AE5 /* EmployeesViewController+Extensions.swift */,
 				CB7BE5992917F9B700B32AE5 /* EmployeesViewController+SetupUI.swift */,
+				CBA2BC7A291BFA6000864F31 /* EmployeeSectionHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 				CB7BE57F2917CCA600B32AE5 /* Services */,
 				CB97D5DB29156DB5001DAC82 /* Application */,
 				CB7BE58A2917F07800B32AE5 /* Resources */,
+				CBA2BC78291BE62C00864F31 /* String+.swift */,
 			);
 			path = AvitoInternship;
 			sourceTree = "<group>";
@@ -386,12 +392,14 @@
 				CB7BE5932917F92B00B32AE5 /* EmployeesRouter.swift in Sources */,
 				CB7BE5A0291820B200B32AE5 /* EmployeesViewController+Actions.swift in Sources */,
 				CB7BE5982917F97300B32AE5 /* EmployeesViewController+Extensions.swift in Sources */,
+				CBA2BC79291BE62C00864F31 /* String+.swift in Sources */,
 				CB7BE5912917F92B00B32AE5 /* EmployeesModuleBuilder.swift in Sources */,
 				CB7BE5942917F92B00B32AE5 /* EmployeesViewController.swift in Sources */,
 				CB7BE5852917CD3300B32AE5 /* API.swift in Sources */,
 				CB7BE5892917CD5900B32AE5 /* NetworkService.swift in Sources */,
 				CB7BE5952917F92B00B32AE5 /* EmployeesInteractor.swift in Sources */,
 				CB7BE5812917CCF800B32AE5 /* EmployeesResponse.swift in Sources */,
+				CBA2BC7B291BFA6000864F31 /* EmployeeSectionHeader.swift in Sources */,
 				CB7BE5922917F92B00B32AE5 /* EmployeesPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
